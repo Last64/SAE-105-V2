@@ -15,3 +15,55 @@ header {
     height: 100%;
     object-fit: cover; /* conserve le ratio et couvre toute la zone */
 }
+footer {
+    /* margin-top: 128px; */
+    height: 200px;
+    background-color: #293B42;
+}
+
+.footerelement {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #293B42;
+    padding: 8px 16px;
+    border: 0px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.footerelement:hover {
+    transform: translateY(-4px);
+}
+
+.footersae {
+    display: flex;
+    justify-content: center;
+    margin-left: 98px;
+}
+.footerbutton1 {
+    text-align: center;
+}
+
+.flexfooter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 32px;
+}
+
+.cr {
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+.blanc {
+    background-color: white;
+    height: 100px;
+}
+
+img{
+    width: 100%;
+}
