@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>le titre</h1>
+    </div>
+    <div class="class">
+        blabla
+    </div>
+
+    <script src="js/dataSAE.js"></script>
+    <script>
+        let urlParams = new URLSearchParams(location.search);
+        let saeNumber = urlParams.get('number'); //'number' vient de sae.html?number=SAE1.01.
+
+
+        document.querySelector('h1').innerHTML = SAE[saeNumber]['titre']
+
+        document.querySelector('.class').innerHTML = SAE[saeNumber]['description']
+
+    </script>
+</body>
+
+</html>
