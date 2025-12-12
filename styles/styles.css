@@ -3,6 +3,7 @@ html, body {
     margin: 0;
 }
 
+/* Conteneur vidéo */
 header {
     width: 100vw;
     height: 100vh;
@@ -15,18 +16,20 @@ header {
     height: 100%;
     object-fit: cover; /* conserve le ratio et couvre toute la zone */
 }
-footer {
-    /* margin-top: 128px; */
-    height: 200px;
-    background-color: #293B42;
 }
 
+/* Footer */
+footer {
+    background-color: #293B42;
+    max-width: 100vw;
+    padding: 16px;
+    color: white;
+}
+
+/* Éléments du footer */
 .footerelement {
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    background-color: #293B42;
     padding: 8px 16px;
-    border: 0px;
     font-size: 15px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
@@ -36,11 +39,12 @@ footer {
     transform: translateY(-4px);
 }
 
+/* Organisation */
 .footersae {
     display: flex;
     justify-content: center;
-    margin-left: 98px;
 }
+
 .footerbutton1 {
     text-align: center;
 }
@@ -50,20 +54,34 @@ footer {
     justify-content: space-around;
     align-items: center;
     padding-top: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 .cr {
     text-align: center;
-    color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
+    margin-top: 16px;
 }
 
+/* Ligne blanche de séparation */
 .blanc {
     background-color: white;
-    height: 100px;
+    height: 1px;
+    border: none;
+    width: 80%;
+    margin: 16px auto;
 }
 
-img{
+/* Images */
+img {
     width: 100%;
+}
+
+/* Responsive : footer en colonne sur mobile */
+@media (max-width: 768px) {
+    .flexfooter {
+        flex-direction: column;
+    }
 }
