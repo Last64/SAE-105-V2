@@ -4,10 +4,10 @@
 
 /* Couleurs et Polices pour cohérence */
 :root {
-    --color-background-dark: #1e1e1e; /* Noir profond */
-    --color-text-light: #e0e0e0; /* Blanc cassé / Os */
-    --color-accent-brown: #a0522d; /* Sienna / Brun rustique */
-    --color-highlight-gold: #ffcc66; /* Doré pâle */
+    --color-background-dark: #1e1e1e; 
+    --color-text-light: #e0e0e0; 
+    --color-accent-brown: #a0522d; 
+    --color-highlight-gold: #ffcc66; 
     --font-primary: 'Arial', Helvetica, sans-serif;
     --font-secondary: 'Georgia', serif; 
 }
@@ -26,7 +26,7 @@ html, body {
 
 /* Conteneur vidéo (Header) */
 header.hero-section {
-    position: relative; /* Conteneur pour le contenu absolu */
+    position: relative; 
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -44,19 +44,18 @@ video {
     z-index: 1; 
 }
 
-/* Cadre autour de la vidéo */
 .vinland {
     border-radius: 0;
     box-shadow: 0 4px 30px rgba(0,0,0,0.8);
 }
 
-/* Contenu du Hero (texte) */
+/* Contenu du Hero (texte + contact) */
 .hero-content {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centrage parfait */
-    z-index: 10; /* Au-dessus de la vidéo */
+    transform: translate(-50%, -50%); 
+    z-index: 10;
     text-align: center;
     color: var(--color-text-light); 
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.7);
@@ -65,7 +64,7 @@ video {
 
 .main-title {
     font-family: var(--font-secondary);
-    font-size: clamp(2em, 5vw, 4em); /* Taille adaptative */
+    font-size: clamp(2em, 5vw, 4em);
     color: var(--color-highlight-gold);
     margin-bottom: 0.2em;
     text-transform: uppercase;
@@ -76,22 +75,21 @@ video {
     font-style: italic;
     font-size: clamp(1em, 2vw, 1.5em);
     color: var(--color-text-light);
+    margin-bottom: 30px; 
 }
 
 /* ------------------------------------ */
-/* BOUTONS SAE STYLISÉS (GROS BOUTONS) */
+/* STYLE DES BOUTONS SAE (GROS BOUTONS) */
+/* Applique le style UIVERSE Bleu/Cyan */
 /* ------------------------------------ */
 
 .sae-buttons-container {
     margin-top: 30px;
-    /* Si vous voulez que les boutons soient sur une seule ligne (ajuster si vous avez trop de SAE) */
+    margin-bottom: 30px; 
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; 
-    gap: 15px;
 }
 
-/* Classe ciblée par scriptbutton.js pour le conteneur des gros boutons */
 .sae {
     display: flex;
     justify-content: center;
@@ -99,170 +97,112 @@ video {
     gap: 15px;
 }
 
-/* Style Rustique-Épique pour les boutons de la page d'accueil (.SAEbouton) */
 .SAEbouton {
-    /* Couleurs adaptées au thème Vinland Saga */
-    --clr-font-main: var(--color-background-dark);
-    --btn-bg-1: #8b4513; /* Brun Terre (plus clair) */
-    --btn-bg-2: var(--color-accent-brown); /* Brun Rustique (plus foncé) */
-    --btn-bg-color: var(--color-text-light); /* Couleur du texte (os/clair) */
-    --radii: 0.5em;
-
-    /* Propriétés du style "Uiverse" adapté */
-    cursor: pointer;
-    padding: 0.9em 1.4em;
-    min-width: 120px;
-    min-height: 44px;
-    font-size: var(--size, 1rem);
-    font-weight: 500;
-    transition: 0.8s;
-    background-size: 280% auto;
-    background-image: linear-gradient(
-        325deg,
-        var(--btn-bg-2) 0%,
-        var(--btn-bg-1) 55%,
-        var(--btn-bg-2) 90%
-    );
-    border: none;
-    border-radius: var(--radii);
-    color: var(--btn-bg-color);
-    text-transform: uppercase;
-    
-    box-shadow:
-        0px 0px 20px rgba(160, 82, 45, 0.5), 
-        0px 5px 5px -1px rgba(160, 82, 45, 0.25),
-        inset 4px 4px 8px rgba(255, 204, 102, 0.5), 
-        inset -4px -4px 8px rgba(139, 69, 19, 0.35); 
+  /* From Uiverse.io by Allyhere */
+  --clr-font-main: hsla(0 0% 20% / 100);
+  --btn-bg-1: hsla(194 100% 69% / 1); /* Bleu/Cyan clair */
+  --btn-bg-2: hsla(217 100% 56% / 1); /* Bleu vif */
+  --btn-bg-color: hsla(360 100% 100% / 1);
+  --radii: 0.5em;
+  
+  cursor: pointer;
+  padding: 0.9em 1.4em;
+  min-width: 120px;
+  min-height: 44px;
+  font-size: var(--size, 1rem);
+  font-weight: 500;
+  transition: 0.8s;
+  background-size: 280% auto;
+  background-image: linear-gradient(
+    325deg,
+    var(--btn-bg-2) 0%,
+    var(--btn-bg-1) 55%,
+    var(--btn-bg-2) 90%
+  );
+  border: none;
+  border-radius: var(--radii);
+  color: var(--btn-bg-color);
+  text-transform: uppercase;
+  
+  box-shadow:
+    0px 0px 20px rgba(71, 184, 255, 0.5),
+    0px 5px 5px -1px rgba(58, 125, 233, 0.25),
+    inset 4px 4px 8px rgba(175, 230, 255, 0.5),
+    inset -4px -4px 8px rgba(19, 95, 216, 0.35);
 }
 
 .SAEbouton:hover {
-    background-position: right top;
+  background-position: right top;
 }
 
 .SAEbouton:is(:focus, :focus-visible, :active) {
-    outline: none;
-    box-shadow:
-        0 0 0 3px var(--btn-bg-color),
-        0 0 0 6px var(--btn-bg-2);
+  outline: none;
+  box-shadow:
+    0 0 0 3px var(--btn-bg-color),
+    0 0 0 6px var(--btn-bg-2);
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .SAEbouton {
-        transition: linear;
-    }
+  .SAEbouton {
+    transition: linear;
+  }
 }
 
 
 /* ------------------------------------ */
-/* FOOTER ET NAVIGATION */
+/* STYLE DES COORDONNÉES */
 /* ------------------------------------ */
 
-footer {
-    background-color: var(--color-background-dark);
-    max-width: 100vw;
-    padding: 32px 16px; 
-    color: var(--color-text-light);
-    border-top: 2px solid var(--color-accent-brown);
+.contact-info {
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid var(--color-accent-brown);
+    border-bottom: 1px solid var(--color-accent-brown);
+    display: inline-block; 
 }
 
-/* Ligne de séparation */
-.blanc {
-    background-color: var(--color-accent-brown);
-    height: 1px;
-    border: none;
-    width: 80%;
-    margin: 16px auto;
-}
-
-.flexfooter {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding-top: 16px;
-    flex-wrap: wrap;
-    gap: 32px;
-}
-
-/* Conteneur des petits boutons de navigation SAE dans le footer */
-.footersae {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; 
-    max-width: 600px;
-}
-
-/* Contact / Texte */
-.footerbutton1 {
-    text-align: center;
-    padding: 10px;
-}
-.footerbutton1 .footerelement {
-    background: none; 
-    border: none;
-    padding: 4px 8px;
-    text-align: left;
-    display: block;
-    color: var(--color-text-light);
-    font-size: 14px;
-    cursor: default;
-    transition: none;
-}
-.footerbutton1 a {
-    color: var(--color-text-light);
-    text-decoration: none;
-}
-
-/* Style des petits boutons/liens simples du footer */
-/* Ceci est la classe pour les liens dans le footerbutton1 et footersae */
-.footerelement {
+.contact-element {
     font-family: var(--font-primary);
-    padding: 8px 16px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-    
-    background-color: var(--color-accent-brown);
+    font-size: 1em;
+    padding: 5px 20px;
     color: var(--color-text-light);
-    border: 1px solid var(--color-highlight-gold); 
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    text-decoration: none; /* Ajout pour les liens */
-    margin: 5px; /* Espace entre les petits boutons */
+    text-shadow: none; 
 }
 
-.footerelement:hover {
-    transform: translateY(-2px) scale(1.05);
-    background-color: #8b4513; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+.contact-element a {
+    color: var(--color-highlight-gold);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-element a:hover {
+    color: var(--color-text-light);
 }
 
 /* Crédits */
 .cr {
-    text-align: center;
     font-family: var(--font-secondary);
-    font-size: 10px;
-    margin-top: 24px;
+    font-size: 0.8em;
+    margin-top: 20px;
     color: #888;
     font-style: italic;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
 }
-
 
 /* ------------------------------------ */
 /* RESPONSIVE */
 /* ------------------------------------ */
 
 @media (max-width: 768px) {
-    .flexfooter {
-        flex-direction: column;
-    }
-    .footersae {
-        width: 100%; 
-    }
     .main-title {
         font-size: 2.5em;
         letter-spacing: 3px;
     }
     .subtitle {
         font-size: 1.2em;
+    }
+    .contact-element {
+        font-size: 0.9em;
+        padding: 3px 10px;
     }
 }
