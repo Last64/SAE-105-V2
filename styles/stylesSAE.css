@@ -1,0 +1,166 @@
+/* ==================================== */
+/* ⚔️ THÈME VINLAND SAGA (sae.html) 🛡️  */
+/* ==================================== */
+
+/* 1. TYPOGRAPHIE ET COULEURS DE BASE */
+:root {
+    --color-background-dark: #1e1e1e; /* Noir profond */
+    --color-text-light: #e0e0e0; /* Blanc cassé / Os */
+    --color-accent-brown: #a0522d; /* Sienna / Brun rustique */
+    --color-highlight-gold: #ffcc66; /* Doré pâle */
+    --font-primary: 'Arial', sans-serif; /* Fallback lisible */
+    --font-secondary: 'Georgia', serif; /* Donne un aspect historique/littéraire */
+}
+
+/* Application globale */
+body {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-light);
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Conteneur principal */
+.sae-details {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #292929; /* Gris foncé, aspect pierre/bois sombre */
+    border: 1px solid var(--color-accent-brown);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    flex-grow: 1; /* Permet au contenu de s'étendre */
+}
+
+/* Titres */
+h1, h2 {
+    font-family: var(--font-secondary);
+    color: var(--color-highlight-gold);
+    border-bottom: 2px solid var(--color-accent-brown);
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+/* 2. STYLE DES INFORMATIONS DE LA SAE */
+
+/* Numéro de la SAE */
+.NumSAE {
+    display: block;
+    color: var(--color-accent-brown);
+    font-size: 1.2em;
+    margin-top: -10px;
+    font-style: italic;
+}
+
+/* Description et autres blocs de contenu */
+.content > div {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #383838; /* Contraste léger */
+    border-left: 5px solid var(--color-highlight-gold);
+}
+
+/* Mise en gras utilisée dans le JS (div.gras) */
+.gras {
+    font-weight: bold;
+    color: var(--color-highlight-gold);
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* Compétences (span) */
+.CompétenceSAE span {
+    font-style: italic;
+    color: var(--color-text-light);
+}
+
+/* La balise <br> dans la description pour le saut de ligne */
+.DescriptionSAE br {
+    display: block;
+    content: " ";
+    margin-top: 10px; 
+}
+
+
+/* 3. STYLE DES APPRENTISSAGES CRITIQUES (AC) */
+
+#AC {
+    padding: 10px 0;
+}
+
+.AC {
+    background-color: #2e2e2e;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.AC:hover {
+    background-color: #404040; /* Effet au survol */
+}
+
+/* Le code de l'AC (ex: AC11.01) */
+.AC span {
+    color: var(--color-accent-brown);
+    font-weight: bold;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+
+/* 4. FOOTER (Si vous utilisez le footer existant) */
+
+/* Le footer de l'index est supposé être ici */
+footer {
+    background-color: #1e1e1e; /* Noir absolu ou très foncé */
+    padding: 15px 0;
+    text-align: center;
+    border-top: 1px solid var(--color-accent-brown);
+    margin-top: auto; /* Pousse le footer vers le bas */
+}
+
+.footersae {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Style des boutons/liens du footer */
+.footerelement {
+    background-color: var(--color-accent-brown);
+    color: var(--color-text-light);
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    border-radius: 5px;
+}
+
+.footerelement:hover {
+    background-color: #8b4513; /* Brun plus foncé */
+    transform: translateY(-2px);
+}
+
+/* Liens du footer */
+footer a {
+    text-decoration: none;
+    color: inherit;
+}

@@ -4,30 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Détails SAE</title>
+    <link rel="stylesheet" href="styles/stylesSAE.css"> 
+   
 </head>
 
 <body>
-    <div class="title">
-        <h1>le titre</h1>
+    <div class="sae-details">
+        <div class="title">
+            <h1 class="TitreSAE"></h1> <span class="NumSAE"></span> </div>
+
+        <div class="content">
+            <div class="DescriptionSAE"></div>
+            <div class="SemestreSAE"></div>
+            <div class="CompétenceSAE"></div>
+            <div class="RessourceSAE"></div>
+        </div>
+
+        <h2>Apprentissages Critiques (AC)</h2>
+        <div id="AC">
+            </div>
+        
     </div>
-    <div class="class">
-        blabla
-    </div>
+
+    <footer>
+        <div class="footersae">
+            </div>
+    </footer>
+
 
     <script src="js/dataSAE.js"></script>
-    <script>
-        let urlParams = new URLSearchParams(location.search);
-        let saeNumber = urlParams.get('number'); //'number' vient de sae.html?number=SAE1.01.
-
-
-        document.querySelector('h1').innerHTML = SAE[saeNumber]['titre']
-
-        document.querySelector('.class').innerHTML = SAE[saeNumber]['description']
-
-      
-
-    </script>
-</body>
+    <script src="js/script.js"></script> 
+    
+    </body>
 
 </html>

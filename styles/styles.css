@@ -1,10 +1,32 @@
+/* ==================================== */
+/* ⚔️ THÈME VINLAND SAGA (index.html) 🛡️  */
+/* ==================================== */
+
+/* Couleurs et Polices pour cohérence */
+:root {
+    --color-background-dark: #1e1e1e; /* Noir profond */
+    --color-text-light: #e0e0e0; /* Blanc cassé / Os */
+    --color-accent-brown: #a0522d; /* Sienna / Brun rustique */
+    --color-highlight-gold: #ffcc66; /* Doré pâle */
+    --font-primary: 'Arial', Helvetica, sans-serif;
+    --font-secondary: 'Georgia', serif; 
+}
+
 html, body {
     height: 100%;
     margin: 0;
+    background-color: var(--color-background-dark);
+    color: var(--color-text-light);
+    font-family: var(--font-primary);
 }
 
-/* Conteneur vidéo */
-header {
+/* ------------------------------------ */
+/* SECTION HEADER/VIDEO */
+/* ------------------------------------ */
+
+/* Conteneur vidéo (Header) */
+header.hero-section {
+    position: relative; /* Conteneur pour le contenu absolu */
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -13,79 +35,234 @@ header {
 video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* recadre la vidéo comme un background */
+    object-fit: cover;
+    filter: brightness(75%) contrast(110%);
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; 
 }
 
-/* Classe correcte (minuscule comme dans ton HTML) */
+/* Cadre autour de la vidéo */
 .vinland {
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    border-radius: 0;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.8);
 }
 
-/* Footer */
-footer {
-    background-color: #293B42;
-    max-width: 100vw;
-    padding: 16px;
-    color: white;
+/* Contenu du Hero (texte) */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrage parfait */
+    z-index: 10; /* Au-dessus de la vidéo */
+    text-align: center;
+    color: var(--color-text-light); 
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.7);
+    max-width: 90%;
 }
 
-/* Éléments du footer */
-.footerelement {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 8px 16px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
+.main-title {
+    font-family: var(--font-secondary);
+    font-size: clamp(2em, 5vw, 4em); /* Taille adaptative */
+    color: var(--color-highlight-gold);
+    margin-bottom: 0.2em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
 }
 
-.footerelement:hover {
-    transform: translateY(-4px);
+.subtitle {
+    font-style: italic;
+    font-size: clamp(1em, 2vw, 1.5em);
+    color: var(--color-text-light);
 }
 
-/* Organisation */
-.footersae {
+/* ------------------------------------ */
+/* BOUTONS SAE STYLISÉS (GROS BOUTONS) */
+/* ------------------------------------ */
+
+.sae-buttons-container {
+    margin-top: 30px;
+    /* Si vous voulez que les boutons soient sur une seule ligne (ajuster si vous avez trop de SAE) */
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; 
+    gap: 15px;
 }
 
-.footerbutton1 {
-    text-align: center;
-}
-
-.flexfooter {
+/* Classe ciblée par scriptbutton.js pour le conteneur des gros boutons */
+.sae {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 32px;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 15px;
 }
 
-.cr {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    margin-top: 16px;
+/* Style Rustique-Épique pour les boutons de la page d'accueil (.SAEbouton) */
+.SAEbouton {
+    /* Couleurs adaptées au thème Vinland Saga */
+    --clr-font-main: var(--color-background-dark);
+    --btn-bg-1: #8b4513; /* Brun Terre (plus clair) */
+    --btn-bg-2: var(--color-accent-brown); /* Brun Rustique (plus foncé) */
+    --btn-bg-color: var(--color-text-light); /* Couleur du texte (os/clair) */
+    --radii: 0.5em;
+
+    /* Propriétés du style "Uiverse" adapté */
+    cursor: pointer;
+    padding: 0.9em 1.4em;
+    min-width: 120px;
+    min-height: 44px;
+    font-size: var(--size, 1rem);
+    font-weight: 500;
+    transition: 0.8s;
+    background-size: 280% auto;
+    background-image: linear-gradient(
+        325deg,
+        var(--btn-bg-2) 0%,
+        var(--btn-bg-1) 55%,
+        var(--btn-bg-2) 90%
+    );
+    border: none;
+    border-radius: var(--radii);
+    color: var(--btn-bg-color);
+    text-transform: uppercase;
+    
+    box-shadow:
+        0px 0px 20px rgba(160, 82, 45, 0.5), 
+        0px 5px 5px -1px rgba(160, 82, 45, 0.25),
+        inset 4px 4px 8px rgba(255, 204, 102, 0.5), 
+        inset -4px -4px 8px rgba(139, 69, 19, 0.35); 
 }
 
-/* Ligne blanche de séparation */
+.SAEbouton:hover {
+    background-position: right top;
+}
+
+.SAEbouton:is(:focus, :focus-visible, :active) {
+    outline: none;
+    box-shadow:
+        0 0 0 3px var(--btn-bg-color),
+        0 0 0 6px var(--btn-bg-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .SAEbouton {
+        transition: linear;
+    }
+}
+
+
+/* ------------------------------------ */
+/* FOOTER ET NAVIGATION */
+/* ------------------------------------ */
+
+footer {
+    background-color: var(--color-background-dark);
+    max-width: 100vw;
+    padding: 32px 16px; 
+    color: var(--color-text-light);
+    border-top: 2px solid var(--color-accent-brown);
+}
+
+/* Ligne de séparation */
 .blanc {
-    background-color: white;
+    background-color: var(--color-accent-brown);
     height: 1px;
     border: none;
     width: 80%;
     margin: 16px auto;
 }
 
-/* Images */
-img {
-    width: 100%;
+.flexfooter {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 16px;
+    flex-wrap: wrap;
+    gap: 32px;
 }
 
-/* Responsive : footer en colonne sur mobile */
+/* Conteneur des petits boutons de navigation SAE dans le footer */
+.footersae {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    max-width: 600px;
+}
+
+/* Contact / Texte */
+.footerbutton1 {
+    text-align: center;
+    padding: 10px;
+}
+.footerbutton1 .footerelement {
+    background: none; 
+    border: none;
+    padding: 4px 8px;
+    text-align: left;
+    display: block;
+    color: var(--color-text-light);
+    font-size: 14px;
+    cursor: default;
+    transition: none;
+}
+.footerbutton1 a {
+    color: var(--color-text-light);
+    text-decoration: none;
+}
+
+/* Style des petits boutons/liens simples du footer */
+/* Ceci est la classe pour les liens dans le footerbutton1 et footersae */
+.footerelement {
+    font-family: var(--font-primary);
+    padding: 8px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    
+    background-color: var(--color-accent-brown);
+    color: var(--color-text-light);
+    border: 1px solid var(--color-highlight-gold); 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none; /* Ajout pour les liens */
+    margin: 5px; /* Espace entre les petits boutons */
+}
+
+.footerelement:hover {
+    transform: translateY(-2px) scale(1.05);
+    background-color: #8b4513; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+/* Crédits */
+.cr {
+    text-align: center;
+    font-family: var(--font-secondary);
+    font-size: 10px;
+    margin-top: 24px;
+    color: #888;
+    font-style: italic;
+}
+
+
+/* ------------------------------------ */
+/* RESPONSIVE */
+/* ------------------------------------ */
+
 @media (max-width: 768px) {
     .flexfooter {
         flex-direction: column;
+    }
+    .footersae {
+        width: 100%; 
+    }
+    .main-title {
+        font-size: 2.5em;
+        letter-spacing: 3px;
+    }
+    .subtitle {
+        font-size: 1.2em;
     }
 }
