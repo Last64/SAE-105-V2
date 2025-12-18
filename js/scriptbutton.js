@@ -1,10 +1,17 @@
-// Affichage des boutons SAE
+// On récupère la zone d'affichage
+const zoneSae = document.querySelector(".sae");
+let htmlBoutons = "";
 
-foot = "";
-for (let lien in SAE) {
-  // L'ajout d'images est ici si vous l'utilisez
-  foot += '<a href="sae.html?number=' + lien + '"><button style="background-image: url(/images/' 
-  + lien + '.jpg);" class="SAEbouton"> <div class="titresae">' + lien + '</div> </button></a>';
+// On boucle sur l'objet SAE (venant de dataSAE.js)
+for (let id in SAE) {
+    htmlBoutons += `
+        <a href="sae.html?number=${id}" style="text-decoration: none;">
+            <button class="SAEbouton">
+                ${id}
+                <div class="titresae">${SAE[id].titre}</div>
+            </button>
+        </a>`;
 }
-// CORRECTION : Cibler la DIV '.sae' dans le header pour les gros boutons stylisés
-document.querySelector(".sae").innerHTML = foot
+
+// On injecte les boutons dans la page
+zoneSae.innerHTML = htmlBoutons;

@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAE - Vinland Saga</title>
+    <title>Portfolio - Vinland Saga</title>
     <link rel="stylesheet" href="styles/styles.css"> 
+    <script>
+        // Ce script répare le bug visuel quand on revient en arrière
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) window.location.reload();
+        });
+    </script>
 </head>
 <body>
-    
     <header class="hero-section">
         <video class="vinland" autoplay muted loop>
             <source src="img/Vinland Saga 4K  Vinland Saga Live Wallpaper.mp4" type="video/mp4">
@@ -15,24 +20,19 @@
         
         <div class="hero-content">
             <h1 class="main-title">VINLAND SAGA : VOYAGE VERS L'UTOPIE</h1>
-            <p class="subtitle">
-                « Un véritable guerrier n'a pas besoin d'une épée. »
-            </p>
+            <p class="subtitle">« Un véritable guerrier n'a pas besoin d'une épée. »</p>
             
-            <div class="sae-buttons-container">
-                <div class="sae">
-                    </div>
+            <div class="sae-container">
+                <div class="sae"></div>
             </div>
             
             <div class="contact-info">
-                <div class="contact-element"> <a href="https://www.instagram.com/mehdimendi1/">Instagram: @mehdimendi1</a></div>
-                <div class="contact-element">mhdmendi@gmail.com</div>
-                <div class="contact-element"> Tel: 07 66 54 56 17</div>
+                <p><a href="https://www.instagram.com/mehdimendi1/">Instagram: @mehdimendi1</a></p>
+                <p>mhdmendi@gmail.com</p>
+                <p>Tel: 07 66 54 56 17</p>
+                <p class="cr">Copyright: Mehdicament</p>
             </div>
-            
-            <div class="cr">Copyright: Mehdicament</div>
         </div>
-        
     </header>
 
     <script src="js/dataSAE.js"></script>
