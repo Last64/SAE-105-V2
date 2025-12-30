@@ -5,7 +5,7 @@ let htmlBoutons = "";
 // On boucle sur l'objet SAE (venant de dataSAE.js)
 for (let id in SAE) {
     htmlBoutons += `
-        <a href="sae.html?number=${id}" style="text-decoration: none;">
+        <a href="/page/sae.html?number=${id}" style="text-decoration: none;">
             <button class="SAEbouton">
                 ${id}
                 <div class="titresae">${SAE[id].titre}</div>

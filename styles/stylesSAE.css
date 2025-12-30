@@ -6,7 +6,8 @@
 }
 
 body {
-    background: #0f0f0f; /* Fond très sombre pour faire ressortir la carte */
+    background: #0f0f0f;
+    /* Fond très sombre pour faire ressortir la carte */
     color: #e0e0e0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 40px 20px;
@@ -23,18 +24,22 @@ body {
     transition: 0.3s;
 }
 
-.back-link:hover { background: var(--accent); color: white; }
+.back-link:hover {
+    background: var(--accent);
+    color: white;
+}
 
 /* Carte principale avec effet de verre */
 .sae-details {
     max-width: 850px;
     margin: 30px auto;
     background: rgba(30, 30, 30, 0.8);
-    backdrop-filter: blur(10px); /* Flou d'arrière-plan */
+    backdrop-filter: blur(10px);
+    /* Flou d'arrière-plan */
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
 /* Header de la SAE */

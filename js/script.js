@@ -24,10 +24,10 @@ if (!saeNumber || !SAE[saeNumber]) {
 
 
     // --- 2. GESTION DES DONNÉES SIMPLES ---
-    
+
     // Le numéro de la SAE (qui est la clé dans l'objet)
-    document.querySelector(".NumSAE").innerHTML = saeNumber; 
-    
+    document.querySelector(".NumSAE").innerHTML = saeNumber;
+
     // Le Titre
     document.querySelector(".TitreSAE").innerHTML = saeInfo.titre;
 
@@ -39,19 +39,9 @@ if (!saeNumber || !SAE[saeNumber]) {
 
     // Les Ressources
     document.querySelector(".RessourceSAE").innerHTML = `<div class="gras">Ressources:</div> ${Object.values(saeInfo.ressources).join(', ')}`;
-    
+
     // Le Semestre
     document.querySelector(".SemestreSAE").innerHTML = `<div class="gras">Semestre:</div> ${saeInfo.semestre}`;
-
-
-    // --- 3. GESTION DU FOOTER (copié de votre script.js) ---
-    
-    // Pour afficher le footer (barre de navigation de bas de page)
-    let foot = "";
-    for (let lien in SAE) {
-        // J'utilise ici la classe simple 'footerelement' comme dans scriptSAE.js
-        foot += '<a href="sae.html?number=' + lien + '"><button class="footerelement">' + lien + '</button></a>';
-    }
-    document.querySelector(".footersae").innerHTML = foot + '<a href="index.html"><button class="footerelement">Accueil</button></a>';
+    document.querySelector(".PDF").innerHTML = "<a href='../PDF/" + saeNumber + ".pdf'>Voir le PDF</a>"
 
 }
