@@ -10,7 +10,7 @@ if (!saeNumber || !SAE[saeNumber]) {
     // Prendre les infos de l'objet SAE en fonction du nombre
     let saeInfo = SAE[saeNumber];
 
-    // --- 1. GESTION DES APPRENTISSAGES CRITIQUES (AC) ---
+    //  1. GESTION DES APPRENTISSAGES CRITIQUES (AC) 
     let ac = "";
     // Boucle à travers l'objet AC (ex: AC11.01: "Présenter une organisation...")
     for (let aprc in saeInfo["AC"]) {
@@ -23,7 +23,7 @@ if (!saeNumber || !SAE[saeNumber]) {
     document.querySelector("#AC").innerHTML = ac;
 
 
-    // --- 2. GESTION DES DONNÉES SIMPLES ---
+    //  2. GESTION DES DONNÉES DU DATA.JS POUR LES INSÉRER DANS LA PAGE SAE.HTML
 
     // Le numéro de la SAE (qui est la clé dans l'objet)
     document.querySelector(".NumSAE").innerHTML = saeNumber;
@@ -31,7 +31,7 @@ if (!saeNumber || !SAE[saeNumber]) {
     // Le Titre
     document.querySelector(".TitreSAE").innerHTML = saeInfo.titre;
 
-    // La Description (qui contient déjà des balises <br> dans dataSAE.js)
+    // La Description 
     document.querySelector(".DescriptionSAE").innerHTML = `<div class="gras">Description:</div> ${saeInfo.description}`;
 
     // Les Compétences
